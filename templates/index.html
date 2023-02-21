@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <style>
+            body {
+                margin: 50px;
+                background-color: black;
+                text-align: center;
+            }
+            #url {
+                height: auto;
+                width: auto;
+                background-color: black;
+                color: white;
+            }
+            .flex-wrapper {
+                display: flex;
+                margin-left: auto;
+                margin-right: auto;
+                min-height: 88vh;
+                flex-direction: column;
+                justify-content: space-between;
+                background-color: rgb(36, 36, 36)
+                }
+            img.logo {
+                padding: 5vh;
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                max-width: 300px;
+                min-width: 25vw;
+                height: auto;
+                border-radius: 50%;    
+            }
+            h1 {
+                opacity: 1;
+            }
+            .btn {
+                background-color: black;
+                color: white;
+            }
+            #remote {
+                margin-top: 20px;
+                height: 300px;
+            }
+    </style>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="data:image/x-icon;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAARSURBVDhPYxgFo2AUQAEDAwADEAABuGyTOQAAAABJRU5ErkJggg==" />
+    <title>Mainpage</title>
+  </head>
+  <body>
+      <div class="flex-wrapper">
+          <div class="container">
+              {% if remote  %} <a href="remote"><img id="remote" src="static/remote.png"></a>{% endif %}
+              <h1><a href="/display">Display Control</a></h1>
+            </div>
+            <div class="bottom">
+                {% if outlet == 'on' %}<h1>Outlet: <img alt="Outlet ON" src="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP8APwD/AJYA/wDWAP8A+QD/APkA/wDWAP8AlgD/AD8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/wAaAP8AkwD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8AkwD/ABoAAAAAAAAAAAAAAAAA/wAaAP8ApwD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wCnAP8AGgAAAAAAAAAAAP8AkwD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AJMAAAAAAP8APwD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8APwD/AJYA/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AJYA/wDWAP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wDWAP8A+QD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A+QD/APkA/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/APkA/wDWAP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wDWAP8AlgD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8AlgD/AD8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AD8AAAAAAP8AkwD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AJMAAAAAAAAAAAD/ABoA/wCnAP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AKcA/wAaAAAAAAAAAAAAAAAAAP8AGgD/AJMA/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AJMA/wAaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP8APwD/AJYA/wDWAP8A+QD/APkA/wDWAP8AlgD/AD8AAAAAAAAAAAAAAAAAAAAA8A8AAMADAACAAQAAgAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAEAAIABAADAAwAA8A8AAA==" /><a href="/outlet_toggle"> Turn OFF</a></h1>{% endif %}
+                {% if outlet == 'off' %}<h1>Outlet: <img alt="Outlet OFF" src="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/PwAA/5YAAP/WAAD/+QAA//kAAP/WAAD/lgAA/z8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP8aAAD/kwAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD/kwAA/xoAAAAAAAAAAAAAAAAAAP8aAAD/pwAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP+nAAD/GgAAAAAAAAAAAAD/kwAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA/5MAAAAAAAD/PwAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD/PwAA/5YAAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA/5YAAP/WAAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP/WAAD/+QAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD/+QAA//kAAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//kAAP/WAAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP/WAAD/lgAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD/lgAA/z8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA/z8AAAAAAAD/kwAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA/5MAAAAAAAAAAAAA/xoAAP+nAAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA/6cAAP8aAAAAAAAAAAAAAAAAAAD/GgAA/5MAAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA/5MAAP8aAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/PwAA/5YAAP/WAAD/+QAA//kAAP/WAAD/lgAA/z8AAAAAAAAAAAAAAAAAAAAA8A8AAMADAACAAQAAgAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAEAAIABAADAAwAA8A8AAA==" /><a href="/outlet_toggle"> Turn ON</a></h1>{% endif %}
+            </div>
+        </div>
+    </body>
+</html>

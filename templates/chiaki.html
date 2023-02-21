@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Chiaki</title>
+</head>
+<body>
+    <h1>Log in to your PSN account using this <a target="_blank" href="https://auth.api.sonyentertainmentnetwork.com/2.0/oauth/authorize?service_entity=urn:service-entity:psn&response_type=code&client_id=ba495a24-818c-472b-b12d-ff231c1b5745&redirect_uri=https://remoteplay.dl.playstation.net/remoteplay/redirect&scope=psn:clientapp&request_locale=en_US&ui=pr&service_logo=ps&layout_type=popup&smcid=remoteplay&prompt=always&PlatformPrivacyWs1=minimal&">link</a></h1>
+    <h2>After logging in, when the page shows "redirect", copy the URL from the address bar and paste it below.</h2>
+  <form method="post">
+    <input type="search" name="psn">
+    <input type="submit">
+    </form>
+    {% if user_id_base64 %}<h1>{{ user_id_base64 }}</h1>{% endif %}
+</body>
+</html>

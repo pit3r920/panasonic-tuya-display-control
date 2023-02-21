@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head></head>
+    <style>
+        body {
+            background-color: rgb(36, 36, 36)
+        }
+        h1 {
+            color: gray;
+        }
+    </style>
+        <meta charset="UTF-8">
+        <link rel="shortcut icon" href="data:image/x-icon;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAARSURBVDhPYxgFo2AUQAEDAwADEAABuGyTOQAAAABJRU5ErkJggg==" />
+        <title>Panasonic TV</title>
+    </head>
+    <body>
+        <h1>Current volume: {{ volume_now }}</h1>
+        <label for ="set_volume"><h1>Set Volume (1-100): </h1></label>
+        <input type="number" min="0" max="100" name="set_volume" id="volume" value="{{ volume_now }}">
+        <button type="submit">OK</button><br>
+        {% if message %}
+        {{message}}
+        {% endif %}
+        <img src="static/remote.png" usemap="#image-map">
+        <map name="image-map">
+            <area href="/remote/button_power" name="button" value="power" coords="49,82,24" shape="circle"></a>
+            <area href="/remote/button_aspect" name="button" value="aspect" coords="87,76,134,104" shape="rect">
+            <area href="/remote/button_tv" name="button" value="tv" coords="195,104,148,76" shape="rect">
+            <area href="/remote/button_input" name="button" value="input_key" coords="210,76,256,104" shape="rect">
+            <area href="/remote/button_menu" name="button" value="menu" coords="26,133,73,161" shape="rect">
+            <area href="/remote/button_text" name="button" value="text" coords="88,134,134,161" shape="rect">
+            <area href="/remote/button_subs" name="button" value="subtitles" coords="149,134,195,161" shape="rect">
+            <area href="/remote/button_apps" name="button" value="apps" coords="210,133,256,161" shape="rect">
+            <area href="/remote/button_info" name="button" value="info" coords="46,208,20" shape="circle">
+            <area href="/remote/button_exit" name="button" value="exit" coords="237,208,20" shape="circle">
+            <area href="/remote/button_netflix" name="button" value="netflix" coords="30,295,40,275,53,258,67,244,82,265,72,277,63,292,54,310,52,323,52,335,24,335,24,330,25,318" shape="poly">
+            <area href="/remote/button_home" name="button" value="home" coords="77,231,93,222,110,216,127,212,143,211,161,212,176,216,191,221,201,226,205,233,188,255,177,252,165,248,151,245,136,245,122,247,108,251,96,256" shape="poly">
+            <area href="/remote/button_guide" name="button" value="guide" coords="215,244,227,253,235,263,242,273,249,287,254,301,258,316,259,329,259,335,233,334,231,323,229,311,225,300,220,290,214,280,207,273,200,264" shape="poly">
+            <area href="/remote/button_up" name="button" value="up" coords="97,280,118,300,129,295,141,293,153,295,164,299,188,280,181,272,169,267,157,263,143,261,130,263,119,266,108,270,102,274" shape="poly">
+            <area href="/remote/button_left" name="button" value="left" coords="85,291,107,310,103,324,101,337,104,349,108,359,85,380,76,368,72,354,69,342,69,330,71,319,73,310,77,301" shape="poly">
+            <area href="/remote/button_enter" name="button" value="enter" coords="142,335,24" shape="circle">
+            <area href="/remote/button_right" name="button" value="right" coords="177,310,197,290,202,294,207,300,210,308,212,316,214,328,215,340,214,350,210,362,205,372,197,380,178,360,179,353,183,344,184,334,182,326,179,316" shape="poly">
+            <area href="/remote/button_down" name="button" value="down" coords="98,391,118,370,126,373,135,376,145,376,154,374,164,370,187,390,185,395,176,400,165,405,154,407,143,408,130,408,119,405,108,401,102,396" shape="poly">
+            <area href="/remote/button_option" name="button" value="option" coords="46,409,19" shape="circle">
+            <area href="/remote/button_back" name="button" value="back" coords="237,409,19" shape="circle">
+            <area href="/remote/button_red" name="button" value="red" coords="27,455,73,480" shape="rect">
+            <area href="/remote/button_green" name="button" value="green" coords="88,455,134,480" shape="rect">
+            <area href="/remote/button_yellow" name="button" value="yellow" coords="149,455,196,480" shape="rect">
+            <area href="/remote/button_blue" name="button" value="blue" coords="210,455,257,480" shape="rect">
+            <area href="/remote/button_vol_up" name="button" value="volume_up" coords="27,505,91,563" shape="rect">
+            <area href="/remote/button_vol_down" name="button" value="volume_down" coords="27,621,91,563" shape="rect">
+            <area href="/remote/button_mute" name="button" value="mute" coords="109,548,174,578" shape="rect">
+            <area href="/remote/button_ch_up" name="button" value="ch_up" coords="193,505,257,562" shape="rect">
+            <area href="/remote/button_ch_down" name="button" value="ch_down" coords="193,621,257,562" shape="rect">
+            <area href="/remote/button_1" name="button" value="num_1" coords="26,645,91,690" shape="rect">
+            <area href="/remote/button_2" name="button" value="num_2" coords="109,645,174,690" shape="rect">
+            <area href="/remote/button_3" name="button" value="num_3" coords="192,645,257,690" shape="rect">
+            <area href="/remote/button_4" name="button" value="num_4" coords="26,705,91,750" shape="rect">
+            <area href="/remote/button_5" name="button" value="num_5" coords="109,705,174,751" shape="rect">
+            <area href="/remote/button_6" name="button" value="num_6" coords="192,705,257,750" shape="rect">
+            <area href="/remote/button_7" name="button" value="num_7" coords="26,766,91,811" shape="rect">
+            <area href="/remote/button_8" name="button" value="num_8" coords="109,766,174,811" shape="rect">
+            <area href="/remote/button_9" name="button" value="num_9" coords="192,766,257,811" shape="rect">
+            <area href="/remote/button_ehelp" name="button" value="help" coords="26,826,91,871" shape="rect">
+            <area href="/remote/button_0" name="button" value="num_0" coords="109,826,174,871" shape="rect">
+            <area href="/remote/button_last_view" name="button" value="last_view" coords="192,826,257,871" shape="rect">
+            <area href="/remote/button_rewind" name="button" value="rewind" coords="27,925,91,956" shape="rect">
+            <area href="/remote/button_play" name="button" value="play" coords="109,925,174,956" shape="rect">
+            <area href="/remote/button_forward" name="button" value="forward" coords="192,925,257,956" shape="rect">
+            <area name="button" value="previous_track" coords="27,983,92,1014" shape="rect">
+            <area name="button" value="button_media_pause" coords="109,983,174,1014" shape="rect">
+            <area name="button" value="fast_forward" coords="192,983,257,1014" shape="rect">
+            <area href="/remote/button_myapp" name="button_myapp" value="my_app" coords="27,1042,92,1072" shape="rect">
+            <area href="/remote/button_stop" name="button" value="stop" coords="109,1041,174,1072" shape="rect">
+            <area name="button" value="?record" coords="192,1041,257,1072" shape="rect">
+        </map>
+        <br>
+        <h1>Apps</h1>
+        <a href="/remote/cda" name="button" value="cda"><img src="http://scdn.2cda.pl/img/cda-logo.jpg" width="200px"></a>
+        <a href="/remote/youtube" name="button" value="cda"><img src="https://upload.wikimedia.org/wikipedia/commons/7/75/YouTube_social_white_squircle_%282017%29.svg" width="200px"></a><br>
+        <a href="/remote/disney" name="button" value="cda"><img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Disney%2B_logo.svg" width="200px"></a>
+        <a href="/remote/button_netflix" name="button" value="cda"><img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" width="200px"></a>
+        
+        <script>
+            document.getElementById("volume").select();
+        </script>
+    </body>
+</html>

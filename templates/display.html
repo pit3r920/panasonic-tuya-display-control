@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        background-color: rgb(36, 36, 36);
+      }
+    </style>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="data:image/x-icon;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAARSURBVDhPYxgFo2AUQAEDAwADEAABuGyTOQAAAABJRU5ErkJggg==" />
+    <title>Display Control</title>
+  </head>
+  <body>
+    <h1 id="demo">Your display is currently turned {{ screen_status }}</h1>
+    <h2>Luminance: {{ luminance }}%</h2>
+    <h2>Contrast:  {{ contrast }}%</h2>
+    <form method="post">
+      <input type="number" name="set_luminance" id="luminance" min="0" max="100" value="{{ luminance }}">
+      <input type="number" name="set_contrast" id="contrast" min="0" max="100" value="{{ contrast }}">
+      <input type="submit">
+    </form>
+    <h2><a href="/display/vga">Change input to VGA</a></h2>
+    <h2><a href="/display/dvi">Change input to DVI</a></h2>
+    <h2><a href="/display/nightmode">Nightmode</a></h2>
+    <h2><a href="/display/normal">Normal mode</a></h2>
+    <h2><a href="/display/screen_on">ON</a></h2>
+    <h2><a href="/display/screen_off">OFF</a></h2>
+    
+    <script>
+      document.getElementById("luminance").select();
+    </script>
+  </body>
+</html>
